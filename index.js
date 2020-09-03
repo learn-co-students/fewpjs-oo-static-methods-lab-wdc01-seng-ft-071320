@@ -10,11 +10,14 @@ class Formatter {
 
   static titleize(string){
     let words = string.split(" ")
+    let solution = []
     for (let word of words){
       if (word.match(/^(the, a, an, but, of, and, for, at, by, from)$/)){
-        
+        solution.push(word)
+      } else {
+        solution.push(word[0].toUpperCase() + word.slice(1))
       }
     }
-    return words.join(" ")
+    return solution.join(" ")
   }
 }
